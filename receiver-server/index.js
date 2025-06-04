@@ -6,14 +6,14 @@ const app = express();
 const PORT = 4000;
 
 const filePath = path.join(__dirname, '../shared/data.txt');
-
+ 
 app.use(express.json());
 
 app.post('/receive', async (req, res) => {
   const { message } = req.body;
 
   try {
-    await fs.writeFile(filePath, `Received: ${message}\n`, { flag: 'a' });
+    await fs.writeFile(filePath, Received: ${message}\n, { flag: 'a' });
     res.json({ status: 'Message received and written to file' });
   } catch (error) {
     console.error('File write failed:', error);
@@ -22,5 +22,5 @@ app.post('/receive', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Receiver Server running on http://localhost:${PORT}`);
+  console.log(Receiver Server running on http://localhost:${PORT});
 });
